@@ -1,0 +1,21 @@
+post_install() {
+/bin/cat << EOF
+===>
+===> To generate a new configuration file for boost-build automatically,
+===> do "boost-build-config -s"
+===> 
+===> do "boost-build-config --help" for more information.
+===>
+EOF
+boost-build-config -s
+true
+}
+
+post_upgrade() {
+boost-build-config -s
+true
+}
+
+post_remove() {
+true
+}
